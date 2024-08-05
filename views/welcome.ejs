@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="welcome">
+        <!-- <h1>Welcome to Web Application</h1> -->
+
+        <header>
+            <nav>
+                <div id="company" class="nav-left" onmouseenter="changeCompany()" onmouseout="normal()">
+                    Company
+                </div>
+                <div class="nav-right">
+                    <ul>
+                        <li class="revenue">Revenue</li>
+                        <li class="sales">Sales</li>
+                        <li class="customers">Customers</li>
+                        <li class="reports">Reports</li>
+                        <li class="settings">Settings</li>
+                    </ul>
+                </div>
+                <div class="dark-theme" onclick=darkTheme() ondblclick="lightTheme()">
+                    Dark Theme
+                </div>
+                <div id="loginBtn">
+                    <form action="/logout" method="POST">
+                        <button>Logout</button>
+                    </form>
+                </div>
+                <!-- <button id="add-border">Add Border</button> -->
+
+                <button id="close">Close Sidebar</button>
+
+            </nav>
+        </header>
+        <div class="login-modal" id="loginSection">
+            <h3 class="loginTitle">Login</h3>
+            <div id="closeBtn">close</div>
+            <input type="text" placeholder="Enter your name"><br>
+            <input type="password" placeholder="Enter your password"><br>
+            <button id="loginSubmit">Submit</button>
+        </div>
+        <div class="sidenav">
+            <ul>
+                <li>Dashboard</li>
+                <li class="revenue">Revenue</li>
+                <li class="sales">Sales</li>
+                <li class="customers">Customers</li>
+                <li class="reports">Reports</li>
+                <li class="meetings">Meetings</li>
+                <li class="events">Events</li>
+                <li class="settings">Settings</li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="section revenue" onmouseover="eleHover(this)" onmouseout="eleOut(this)">
+                <h2>Revenue</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="section sales" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+                <h2>Sales</h2>
+                <p>Ut euismod efficitur turpis, non tincidunt nibh volutpat sed.</p>
+            </div>
+            <div class="section" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+                <h2 class="customers">Customers</h2>
+                <p>Suspendisse semper ipsum eget neque malesuada auctor.</p>
+            </div>
+            <div class="section reports" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+                <h2>Reports</h2>
+                <p>Morbi id feugiat mauris, at tempus mi.</p>
+            </div>
+            <div class="section meetings" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+                <h2>Meetings</h2>
+                <p>Nulla facilisi. Vestibulum vitae eros nec lectus posuere ultricies.</p>
+            </div>
+            <div class="section events" onmouseover="eleHover(this)" onmouseout=" eleOut(this)">
+                <h2>Events</h2>
+                <p>Quisque eu massa a mauris ultricies dapibus non vitae nulla.</p>
+            </div>
+
+
+            <script>
+                const openNav = document.getElementById("open")
+                const closeNav = document.getElementById("close")
+
+                const sideNavBar = document.querySelector(".sidenav")
+
+                closeNav.addEventListener('click', closeSideNavBar)
+
+                function closeSideNavBar() {
+                    sideNavBar.classList.toggle("mango")
+                }
+
+
+                const darkTheme = function() {
+                    document.querySelector("body").style.backgroundColor = "black"
+                    document.querySelector(".dark-theme").textContent = "Light Theme"
+                    document.querySelector("header").style.backgroundColor = "#2E282A"
+                    document.querySelector(".sidenav").style.backgroundColor = "#808A9F"
+                }
+
+                const lightTheme = function() {
+                    document.querySelector("body").style.backgroundColor = "white"
+                    document.querySelector(".dark-theme").textContent = "Dark Theme"
+                    document.querySelector("header").style.backgroundColor = "#F86624"
+                    document.querySelector(".sidenav").style.backgroundColor = "#1768AC"
+
+                }
+
+                function eleHover(element) {
+                    element.style.backgroundColor = "yellow";
+                }
+
+                function eleOut(item) {
+                    item.style.backgroundColor = "#DEE7E7"
+                }
+
+                const changeCompany = function() {
+                    document.querySelector("#company").textContent = "Sales Force";
+                };
+
+                const normal = function() {
+                    document.querySelector("#company").textContent = "Company"
+                }
+
+                const keyPressed = function() {
+                    document.querySelector("body").style.backgroundColor = "white"
+                }
+
+                const keyDown = function() {
+                    document.querySelector("body").style.backgroundColor = "red"
+                }
+            </script>
+
+        </div>
+</body>
+
+</html>

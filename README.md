@@ -59,6 +59,11 @@ Process explained in images :
 <img width="1728" alt="Screenshot 2024-08-05 at 9 33 39 PM" src="https://github.com/user-attachments/assets/b57bec73-de2d-4081-896a-ab0eedad88d9">
 
 
+1 => Sign Up => Storing in Registration Details in Mongo DB
+2 => Login => validating with Mongo DB, Once Successful SignIn Navigating to Dashboard
+3 => Once clicking on Logout Button, back to Login.
+
+
 
 
 
